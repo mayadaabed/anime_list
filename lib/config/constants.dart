@@ -9,3 +9,7 @@ class Constants {
 class ConstantsPrefsKeys {
   static const String outBoardingViewedKey = 'out_boarding_viewed';
 }
+
+class ApiConstants {
+  static const String baseUrl = 'https://api.jikan.moe/v4';
+}
