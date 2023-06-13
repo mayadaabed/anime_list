@@ -9,4 +9,5 @@ class ManagerColors {
   static const Color transparent = Colors.transparent;
   static const Color primaryColor = Color(0xff3dd8c5);
   static const Color backgroundColor = Color(0xff0f0f0f);
+  static const Color greyLight = Color(0xFFA7A2A2);
 }
