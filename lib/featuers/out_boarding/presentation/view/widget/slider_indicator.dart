@@ -19,7 +19,7 @@ class SliderIndicator extends StatelessWidget {
           color: ManagerColors.greyLight,
         ),
         width: double.infinity,
-        height: ManagerHeight.h10,
+        height: ManagerHeight.h8,
         child: Row(
           children: [
             ...List.generate(
