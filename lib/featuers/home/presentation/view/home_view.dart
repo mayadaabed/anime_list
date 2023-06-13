@@ -1,4 +1,5 @@
 import 'package:anime_list/core/resources/manager_colors.dart';
+import 'package:anime_list/featuers/home/presentation/view/widget/custom_banner.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/widgets/will_pop_scope.dart';
@@ -13,7 +14,11 @@ class HomeView extends StatelessWidget {
       child: Scaffold(
         backgroundColor: ManagerColors.backgroundColor,
         appBar: homeAppBar(),
-        // body: ,
+        body: ListView(
+          children: [
+            CustomBanner(),
+          ],
+        ),
       ),
     );
   }
