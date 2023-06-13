@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../core/storage/local/app_settings_shared_preferences.dart';
 import '../featuers/out_boarding/presentation/controller/out_boarding_controller.dart';
 import '../featuers/splash/presentation/controller/splash_controller.dart';
 
@@ -16,6 +17,9 @@ initModule() async {
   instance.registerLazySingleton<SharedPreferences>(
     () => sharedPreferences,
   );
+
+  instance.registerLazySingleton<AppSettingsSharedPreferences>(
+      () => AppSettingsSharedPreferences(instance()));
 }
 
 initSplash() {
