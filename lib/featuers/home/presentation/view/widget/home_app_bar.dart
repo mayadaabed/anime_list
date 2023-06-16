@@ -10,41 +10,81 @@ import '../../../../../core/resources/manager_styles.dart';
 AppBar homeAppBar() {
   return AppBar(
     backgroundColor: ManagerColors.backgroundColor,
-    title: Text(
-      ManagerStrings.animeXD,
-      style: getRegularTextStyle(
-        fontSize: ManagerFontSize.s22,
-        color: ManagerColors.primaryColor,
-      ),
+    title: Row(
+      children: [
+        CircleAvatar(
+          radius: ManagerRadius.r20,
+          backgroundImage: const AssetImage(
+            ManagerAssets.outBoardingImag1,
+          ),
+        ),
+        SizedBox(
+          width: ManagerWidth.w12,
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              ManagerStrings.hello,
+              style: getBoldTextStyle(
+                fontSize: ManagerFontSize.s22,
+                color: ManagerColors.textColor,
+              ),
+            ),
+            Text(
+              ManagerStrings.otukao,
+              style: getRegularTextStyle(
+                fontSize: ManagerFontSize.s22,
+                color: ManagerColors.textColor,
+              ),
+            ),
+          ],
+        ),
+      ],
     ),
     automaticallyImplyLeading: false,
     actions: [
-      IconButton(
-        onPressed: () {},
-        icon: SvgPicture.asset(
-          ManagerAssets.search,
-          colorFilter: const ColorFilter.mode(
-            ManagerColors.white,
-            BlendMode.srcIn,
+      Container(
+        height: ManagerHeight.h35,
+        width: ManagerWidth.w35,
+        decoration: BoxDecoration(
+          color: ManagerColors.greyLight.withOpacity(
+            ManagerOpacity.op0_5,
+          ),
+          shape: BoxShape.circle,
+        ),
+        child: IconButton(
+          onPressed: () {},
+          icon: SvgPicture.asset(
+            ManagerAssets.search,
+            colorFilter: const ColorFilter.mode(
+              ManagerColors.white,
+              BlendMode.srcIn,
+            ),
           ),
         ),
       ),
-      IconButton(
-        onPressed: () {},
-        icon: SvgPicture.asset(
-          ManagerAssets.notification,
-          colorFilter: const ColorFilter.mode(
-            ManagerColors.white,
-            BlendMode.srcIn,
+      Container(
+        height: ManagerHeight.h35,
+        width: ManagerWidth.w35,
+        decoration: BoxDecoration(
+          color: ManagerColors.greyLight.withOpacity(
+            ManagerOpacity.op0_5,
+          ),
+          shape: BoxShape.circle,
+        ),
+        child: IconButton(
+          onPressed: () {},
+          icon: SvgPicture.asset(
+            ManagerAssets.notification,
+            colorFilter: const ColorFilter.mode(
+              ManagerColors.white,
+              BlendMode.srcIn,
+            ),
           ),
         ),
       ),
-      CircleAvatar(
-        radius: ManagerRadius.r14,
-        backgroundImage: const AssetImage(
-          ManagerAssets.outBoardingImag1,
-        ),
-      )
     ],
   );
 }
