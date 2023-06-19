@@ -19,4 +19,5 @@ class ManagerStrings {
   static const String seeAll = 'see All';
   static const String episode = 'Episode';
   static const String manga = 'Manga';
+  static const String chapters = 'Chapters';
 }
