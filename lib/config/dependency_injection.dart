@@ -105,7 +105,7 @@ initHome() {
 
   if (!GetIt.I.isRegistered<MangaRepository>()) {
     instance.registerLazySingleton<MangaRepository>(
-      () => MangaImplementation(
+      () => (
         instance<RemoteMangaDataSource>(),
         instance<NetworkInfo>(),
       ),

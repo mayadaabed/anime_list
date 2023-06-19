@@ -7,11 +7,11 @@ import '../../domain/model/manga_models/manga_model.dart';
 import '../../domain/repository/manga_repository.dart';
 import '../data_source/remote_manga_data_source.dart';
 
-class MangaImplementation implements MangaRepository {
+class MangaRepoImplementation implements MangaRepository {
   final RemoteMangaDataSource _dataSource;
   final NetworkInfo networkInfo;
 
-  MangaImplementation(this._dataSource, this.networkInfo);
+  MangaRepoImplementation(this._dataSource, this.networkInfo);
 
   @override
   Future<Either<Failer, MangaModel>> manga() async {
