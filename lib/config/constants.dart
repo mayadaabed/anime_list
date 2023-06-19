@@ -4,6 +4,8 @@ class Constants {
   static const int splashDuration = 3;
   static const int outBoardingDurationTime = 1;
   static const int sliderItems = 3;
+  static const double navBarMargin = 0;
+  static const double navBarPadding = 6;
 }
 
 class ConstantsPrefsKeys {
