@@ -28,7 +28,7 @@ class CustomText extends StatelessWidget {
           Text(
             name,
             style: getBoldTextStyle(
-              fontSize: ManagerFontSize.s16,
+              fontSize: ManagerFontSize.s20,
               color: ManagerColors.textColor,
             ),
           ),
