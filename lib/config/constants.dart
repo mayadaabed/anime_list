@@ -9,3 +9,15 @@ class Constants {
 class ConstantsPrefsKeys {
   static const String outBoardingViewedKey = 'out_boarding_viewed';
 }
+
+class ApiConstants {
+  static const String baseUrl = 'https://kitsu.io/api/edge';
+  static const String baseUrl2 = 'https://api.jikan.moe/v4';
+  static const String message = 'message';
+  static const String errors = 'errors';
+  static const String error = 'error';
+  static const String badRequest = 'bad request';
+  static const String noInternetConnection = 'No Internet Connection';
+  static const int sendTimeOutDuration = 120;
+  static const int recieveTimeOutDuration = 120;
+}

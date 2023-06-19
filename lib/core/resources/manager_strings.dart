@@ -12,4 +12,12 @@ class ManagerStrings {
       'Experinced and Enjoy watching your favorite Animes in HD.';
   static const String outBoardingSubTitle3 =
       'Download your favorite Animes to watch them later.';
+  static const String ok = 'Ok';
+  static const String hello = 'Hello';
+  static const String otukao = 'Outokau';
+  static const String topAnime = 'Top Anime';
+  static const String seeAll = 'see All';
+  static const String episode = 'Episode';
+  static const String manga = 'Manga';
+  static const String chapters = 'Chapters';
 }
