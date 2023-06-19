@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 
 import '../../../../core/widgets/will_pop_scope.dart';
 import '../controller/home_controller.dart';
+import 'widget/custom_manga.dart';
 import 'widget/custom_top_anime.dart';
 import 'widget/custom_text.dart';
 import 'widget/home_app_bar.dart';
@@ -58,6 +59,23 @@ class HomeView extends StatelessWidget {
                 name: ManagerStrings.manga,
                 buttonColor: ManagerColors.primaryColor,
                 nameButton: ManagerStrings.seeAll,
+              ),
+              SizedBox(
+                height: ManagerHeight.h500,
+                child: ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: controller.mangaList.length,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        CustomManga(
+                          index: index,
+                          // onTap: () => Get.to(() => CourseDescriptionView(index: index + 1)),
+                        ),
+                      ],
+                    );
+                  },
+                ),
               ),
             ],
           );
