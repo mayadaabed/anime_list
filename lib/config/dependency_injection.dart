@@ -18,6 +18,7 @@ import '../core/network/dio_factory.dart';
 import '../core/storage/local/app_settings_shared_preferences.dart';
 import '../featuers/home/data/data_source/remote_manga_data_source.dart';
 import '../featuers/home/data/repository_implementation/manga_repository_impl.dart';
+import '../featuers/main/presentation/controller/main_controller.dart';
 import '../featuers/out_boarding/presentation/controller/out_boarding_controller.dart';
 import '../featuers/splash/presentation/controller/splash_controller.dart';
 
@@ -122,4 +123,8 @@ initHome() {
   Get.put<HomeController>(HomeController());
 }
 
+initMainModule() {
+  Get.put<MainController>(MainController());
+  initHome();
+}
 
