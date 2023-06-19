@@ -68,7 +68,7 @@ class OutBoardingController extends GetxController {
 
   Future<void> getStart() async {
     await _appSettingsSharedPreferences.setOutBoardingViewed();
-    Get.offAllNamed(Routes.homeView);
+    Get.offAllNamed(Routes.mainView);
   }
 
   void previousPage() {
