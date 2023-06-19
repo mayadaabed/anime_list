@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../config/dependency_injection.dart';
 import '../core/resources/manager_strings.dart';
 import '../featuers/home/presentation/view/home_view.dart';
+import '../featuers/main/presentation/view/main_view.dart';
 import '../featuers/out_boarding/presentation/view/out_boarding_view.dart';
 import '../featuers/splash/presentation/view/splash_view.dart';
 
@@ -9,6 +10,7 @@ class Routes {
   static const String splashView = '/splash_view';
   static const String outBoardingView = '/out_boarding_view';
   static const String homeView = '/home_view';
+  static const String mainView = '/main_view';
 }
 
 class RouteGenerator {
@@ -21,8 +23,10 @@ class RouteGenerator {
         initOutBoarding();
         return MaterialPageRoute(builder: (_) => const OutBoardingView());
       case Routes.homeView:
-        initHome();
         return MaterialPageRoute(builder: (_) => const HomeView());
+      case Routes.mainView:
+        initMainModule();
+        return MaterialPageRoute(builder: (_) => const MainView());
       default:
         return undefinedRoute();
     }
