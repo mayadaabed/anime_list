@@ -146,6 +146,7 @@ class ManagerIconSize {
   static double s8 = 8;
   static double s10 = 10;
   static double s24 = 24;
+  static double s36 = 36;
 }
 
 class ConstantSize {
