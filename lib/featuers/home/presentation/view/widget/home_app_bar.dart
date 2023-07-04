@@ -1,6 +1,8 @@
 import 'package:anime_list/core/resources/manager_sizes.dart';
+import 'package:anime_list/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import '../../../../../core/resources/manager_assets.dart';
 import '../../../../../core/resources/manager_colors.dart';
 import '../../../../../core/resources/manager_fonts.dart';
@@ -55,7 +57,9 @@ AppBar homeAppBar() {
           shape: BoxShape.circle,
         ),
         child: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed(Routes.searchView);
+          },
           icon: SvgPicture.asset(
             ManagerAssets.search,
             colorFilter: const ColorFilter.mode(
