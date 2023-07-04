@@ -6,6 +6,7 @@ class Constants {
   static const int sliderItems = 3;
   static const double navBarMargin = 0;
   static const double navBarPadding = 6;
+  static const double elevation = 0.0;
 }
 
 class ConstantsPrefsKeys {
