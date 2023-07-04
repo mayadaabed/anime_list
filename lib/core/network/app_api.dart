@@ -4,6 +4,7 @@ import '../../config/constants.dart';
 import '../../config/request_constants.dart';
 import '../../featuers/home/data/response/manga_response/manga_response.dart';
 import '../../featuers/home/data/response/trending_anime_response.dart';
+import '../../featuers/search/data/response/search_response.dart';
 
 part 'app_api.g.dart';
 
@@ -19,4 +20,10 @@ abstract class AppApi {
 
   @GET(RequestConstants.manga)
   Future<MangaResponse> manga();
+
+  @GET(RequestConstants.search)
+  Future<SearchResponse> search(
+    @Query('q') String? query,
+  );
+
 }
