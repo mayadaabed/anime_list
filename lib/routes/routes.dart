@@ -1,3 +1,4 @@
+import 'package:anime_list/featuers/search/presentation/view/search_view.dart';
 import 'package:flutter/material.dart';
 import '../config/dependency_injection.dart';
 import '../core/resources/manager_strings.dart';
@@ -11,6 +12,7 @@ class Routes {
   static const String outBoardingView = '/out_boarding_view';
   static const String homeView = '/home_view';
   static const String mainView = '/main_view';
+  static const String searchView = '/search_view';
 }
 
 class RouteGenerator {
@@ -27,6 +29,9 @@ class RouteGenerator {
       case Routes.mainView:
         initMainModule();
         return MaterialPageRoute(builder: (_) => const MainView());
+      case Routes.searchView:
+        initSearch();
+        return MaterialPageRoute(builder: (_) => const SearchView());
       default:
         return undefinedRoute();
     }
