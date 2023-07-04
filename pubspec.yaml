@@ -50,6 +50,7 @@ dependencies:
   dartz: ^0.10.1
   flutter_state_render_dialog: ^1.0.4
   floating_bottom_navigation_bar: ^1.5.2
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:
