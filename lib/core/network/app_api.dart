@@ -26,4 +26,8 @@ abstract class AppApi {
     @Query('q') String? query,
   );
 
+  @GET(RequestConstants.animeDetails)
+  Future<AnimeDetailsResponse> animeDetails(
+    @Path('id') int id,
+  );
 }
