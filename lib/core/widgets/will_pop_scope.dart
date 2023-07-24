@@ -1,5 +1,11 @@
 import 'package:flutter/cupertino.dart';
 
-Widget willPopScope({required Widget child}) {
-  return WillPopScope(child: child, onWillPop: () async => false);
+Widget willPopScope({
+  required Widget child,
+  WillPopCallback? onWillPop,
+}) {
+  return WillPopScope(
+    onWillPop: onWillPop ?? () async => false,
+    child: child,
+  );
 }

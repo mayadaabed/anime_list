@@ -51,6 +51,15 @@ dependencies:
   flutter_state_render_dialog: ^1.0.4
   floating_bottom_navigation_bar: ^1.5.2
   shimmer: ^3.0.0
+  cached_network_image: ^3.2.3
+  readmore: ^2.2.0
+  youtube_player_flutter: ^8.1.2
+  visibility_detector: ^0.4.0+2
+  intl: 
+  easy_localization: ^3.0.2
+  dropdown_button2: ^2.3.6
+  
+  
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +89,7 @@ flutter:
   assets:
     - assets/images/
     - assets/json/
+    - assets/translations/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
