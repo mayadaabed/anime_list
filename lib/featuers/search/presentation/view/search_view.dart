@@ -2,10 +2,10 @@ import 'package:anime_list/core/resources/manager_strings.dart';
 import 'package:anime_list/featuers/search/presentation/view/widgets/search_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../config/constants.dart';
 import '../../../../core/resources/manager_colors.dart';
 import '../../../../core/resources/manager_sizes.dart';
 import '../../../../core/widgets/base_text_form_feild.dart';
+import '../../../../core/widgets/main_app_bar.dart';
 import '../../../../core/widgets/shimmer_effect.dart';
 import '../../../../core/widgets/will_pop_scope.dart';
 import '../controller/search_controller.dart';
@@ -20,13 +20,8 @@ class SearchView extends StatelessWidget {
       child: GetBuilder<SearchControllers>(
         builder: (controller) {
           return Scaffold(
-            appBar: AppBar(
-              elevation: Constants.elevation,
-              backgroundColor: ManagerColors.transparent,
-              iconTheme: IconThemeData(
-                color: ManagerColors.white,
-                size: ManagerIconSize.s36,
-              ),
+            appBar: MainAppBar(
+              title: ManagerStrings.search,
             ),
             backgroundColor: ManagerColors.backgroundColor,
             body: ListView(children: [
@@ -43,14 +38,17 @@ class SearchView extends StatelessWidget {
                     hintText: ManagerStrings.search,
                     prefixIcon: Icons.search,
                     onChange: (value) {
-                      controller.search();
+                      controller.searchAnime();
                     }),
               ),
               SizedBox(
                 height: ManagerHeight.h20,
               ),
-              controller.isLoading
-                  ? GridView.builder(
+              controller.searchList.isEmpty
+                  ? buildEffect(
+                      view: const SearchShimmer(),
+                    )
+                  : GridView.builder(
                       padding: EdgeInsets.only(
                         left: ManagerWidth.w10,
                         right: ManagerWidth.w10,
@@ -65,20 +63,21 @@ class SearchView extends StatelessWidget {
                               mainAxisSpacing: 22),
                       itemCount: controller.searchList.length,
                       itemBuilder: (context, index) {
-                        return SearchItem(
-                          episode:
-                              controller.searchList[index].episodes.toString(),
-                          imagePath: controller
-                              .searchList[index].images!.jpg!.largeImageUrl
-                              .toString(),
-                          name: controller.searchList[index].title.toString(),
+                        return InkWell(
+                          onTap: () {
+                            controller.performAnimeDetails(index);
+                          },
+                          child: SearchItem(
+                            episode: controller.searchList[index].episodes
+                                .toString(),
+                            imagePath: controller
+                                .searchList[index].images!.jpg!.largeImageUrl
+                                .toString(),
+                            name: controller.searchList[index].title.toString(),
+                          ),
                         );
                       },
                     )
-                  : buildEffect(
-                      SearchShimmer(),
-                      controller.isLoading,
-                    ),
             ]),
           );
         },
