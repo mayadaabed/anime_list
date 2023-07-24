@@ -1,4 +1,5 @@
 import 'dart:ui';
+import '../../config/constants.dart';
 import '../resources/manager_colors.dart';
 
 extension NonNullString on String? {
@@ -67,6 +68,16 @@ extension NonNullFunctionBool on bool Function()? {
       return () {
         return false;
       };
+    } else {
+      return this!;
+    }
+  }
+}
+
+extension NonNullLocale on String? {
+  String parseToLocale() {
+    if (this == null) {
+      return Constants.englishKey;
     } else {
       return this!;
     }
