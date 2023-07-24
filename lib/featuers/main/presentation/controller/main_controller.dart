@@ -5,6 +5,9 @@ import '../../../../core/resources/manager_assets.dart';
 import '../../../../core/resources/manager_colors.dart';
 import '../../../home/presentation/view/home_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../../profile/persentation/view/profile_view.dart';
+import '../../../schedules/presentations/view/schedules_view.dart';
+import '../../../seasons/presentations/view/seasons_view.dart';
 
 class MainController extends GetxController {
   late int selectedTab = 0;
@@ -30,7 +33,7 @@ class MainController extends GetxController {
       ),
       FloatingNavbarItem(
         customWidget: SvgPicture.asset(
-          ManagerAssets.category,
+          ManagerAssets.season,
           colorFilter: ColorFilter.mode(
             selectedTab == 1 ? ManagerColors.primaryColor : ManagerColors.white,
             BlendMode.srcIn,
@@ -39,7 +42,7 @@ class MainController extends GetxController {
       ),
       FloatingNavbarItem(
         customWidget: SvgPicture.asset(
-          ManagerAssets.homeImage,
+          ManagerAssets.schedule,
           colorFilter: ColorFilter.mode(
             selectedTab == 2 ? ManagerColors.primaryColor : ManagerColors.white,
             BlendMode.srcIn,
@@ -59,17 +62,10 @@ class MainController extends GetxController {
     update();
   }
 
-  Color color = ManagerColors.black;
   List<Widget> screens = [
     const HomeView(),
-    Container(
-      color: Colors.green,
-    ),
-    Container(
-      color: Colors.yellowAccent,
-    ),
-    Container(
-      color: Colors.blue,
-    ),
+    const SeasonsView(),
+    const SchedulesView(),
+    const ProfileView(),
   ];
 }
