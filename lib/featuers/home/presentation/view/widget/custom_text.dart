@@ -1,3 +1,4 @@
+import 'package:anime_list/core/extentions/extentions.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/resources/manager_colors.dart';
@@ -6,16 +7,18 @@ import '../../../../../core/resources/manager_sizes.dart';
 import '../../../../../core/resources/manager_styles.dart';
 
 class CustomText extends StatelessWidget {
-  const CustomText(
-      {Key? key,
-      required this.name,
-      required this.nameButton,
-      required this.buttonColor})
-      : super(key: key);
+  const CustomText({
+    Key? key,
+    required this.name,
+    required this.nameButton,
+    required this.buttonColor,
+    this.onPressed,
+  }) : super(key: key);
 
   final String name;
   final String nameButton;
   final Color buttonColor;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +36,7 @@ class CustomText extends StatelessWidget {
             ),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: onPressed.onNull(),
             child: Text(
               nameButton,
               style: getMediumTextStyle(
