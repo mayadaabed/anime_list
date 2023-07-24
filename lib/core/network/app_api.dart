@@ -39,4 +39,5 @@ abstract class AppApi {
 
   @GET(RequestConstants.seasons)
   Future<SeasonsResponse> seasons();
+
 }
