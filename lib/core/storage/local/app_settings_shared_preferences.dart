@@ -25,4 +25,19 @@ class AppSettingsSharedPreferences {
   void clear() {
     _sharedPreferences.clear();
   }
+
+  String get locale =>
+      _sharedPreferences.getString(ConstantsPrefsKeys.locale).parseToLocale();
+
+  Future<void> setLocale(String locale) async {
+    await _sharedPreferences.setString(ConstantsPrefsKeys.locale, locale);
+  }
+
+  Future<void> setAppTheme(String theme) async {
+    await _sharedPreferences.setString(Constants.prefKeyTheme, theme);
+  }
+
+  String getAppTheme() {
+    return _sharedPreferences.getString(Constants.prefKeyTheme).toString();
+  }
 }
