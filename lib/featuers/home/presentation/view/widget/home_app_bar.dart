@@ -58,7 +58,7 @@ AppBar homeAppBar() {
         ),
         child: IconButton(
           onPressed: () {
-            Get.toNamed(Routes.searchView);
+            Navigator.pushNamed(Get.context!, Routes.searchView);
           },
           icon: SvgPicture.asset(
             ManagerAssets.search,
