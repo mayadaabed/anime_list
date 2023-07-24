@@ -7,10 +7,19 @@ class Constants {
   static const double navBarMargin = 0;
   static const double navBarPadding = 6;
   static const double elevation = 0.0;
+  static const int seasonsDuration = 3;
+  static const int schedulesDuration = 4;
+  static const int mangaDuration = 2;
+  static const String arabicKey = 'ar';
+  static const String englishKey = 'en';
+  static const String arabic = 'العربية';
+  static const String english = 'English';
+  static const String prefKeyTheme = 'theme_key';
 }
 
 class ConstantsPrefsKeys {
   static const String outBoardingViewedKey = 'out_boarding_viewed';
+  static const String locale = 'locale';
 }
 
 class ApiConstants {
