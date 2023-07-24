@@ -8,6 +8,7 @@ import 'package:anime_list/featuers/home/domain/use_case/trending_anime_use_case
 import 'package:anime_list/featuers/home/presentation/controller/home_controller.dart';
 import 'package:anime_list/featuers/seasons/presentations/controller/seasons_controller.dart';
 import 'package:dio/dio.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
@@ -48,6 +49,7 @@ final instance = GetIt.instance;
 
 initModule() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   final SharedPreferences sharedPreferences =
       await SharedPreferences.getInstance();
 
@@ -143,6 +145,7 @@ initHome() {
   }
 
   Get.put<HomeController>(HomeController());
+  disposeAnimeDetails();
 }
 
 initMainModule() {
@@ -184,6 +187,7 @@ initSearch() {
 }
 
 initAnimeDetails() {
+  disposeAnimeDetails();
   if (!GetIt.I.isRegistered<RemoteAnimeDetailsDataSource>()) {
     instance.registerLazySingleton<RemoteAnimeDetailsDataSource>(
       () => RemoteAnimeDetailsDataSourceImpl(
@@ -273,4 +277,25 @@ initSchedules() {
 initProfile() {
   Get.put<ProfileController>(ProfileController());
   Get.put<LocaleNotifierController>(LocaleNotifierController());
+}
+
+disposeProfile() {
+  Get.delete<ProfileController>();
+  Get.delete<LocaleNotifierController>();
+}
+
+disposeAnimeDetails() async {
+  if (GetIt.I.isRegistered<RemoteAnimeDetailsDataSource>()) {
+    instance.unregister<RemoteAnimeDetailsDataSource>();
+  }
+
+  if (GetIt.I.isRegistered<AnimeDetailsRepository>()) {
+    instance.unregister<AnimeDetailsRepository>();
+  }
+
+  if (GetIt.I.isRegistered<AnimeDetailsUseCase>()) {
+    instance.unregister<AnimeDetailsUseCase>();
+  }
+
+  Get.delete<AnimeDetailsController>();
 }
