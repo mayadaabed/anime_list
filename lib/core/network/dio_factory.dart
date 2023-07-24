@@ -22,11 +22,9 @@ class DioFactory {
 
     if (!kReleaseMode) {
       dio.interceptors.add(PrettyDioLogger(
-        responseBody: true,
-        requestBody: true,
+        responseBody: false,
         responseHeader: true,
-        requestHeader: true,
-        request: true,
+        request: false,
       ));
     }
 
