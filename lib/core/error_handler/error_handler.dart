@@ -1,5 +1,6 @@
-import 'package:dio/dio.dart';
+// ignore_for_file: constant_identifier_names
 
+import 'package:dio/dio.dart';
 import '../../config/constants.dart';
 
 class Failer {
@@ -13,7 +14,7 @@ class ErrorHandler implements Exception {
   late Failer failer;
 
   ErrorHandler.handle(dynamic error) {
-    if (error is DioError) {
+    if (error is DioException) {
       failer = Failer(
           error.response!.statusCode ?? ResponseCode.BAD_REQUEST.value,
           error.response!.data[ApiConstants.message] ??
