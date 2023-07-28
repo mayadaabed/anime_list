@@ -32,9 +32,10 @@
   "changeLanguage": "Change Language",
   "appTheme": "Change Theme",
   "logout": "Log out",
-  "darkMode": "Dark Mode",
-  "on": "On",
-  "off": "Off",
+  "changeTheme": "Change Theme",
+  "light": "Light",
+  "dark": "Dark",
+  "system": "System",
   "language": "Language",
   "sureLogout": "Are you sure you want to logout? ",
   "cancel": "Cancel"
