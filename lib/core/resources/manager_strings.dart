@@ -67,11 +67,12 @@ class ManagerStrings {
 
   static String get logout => tr('logout');
 
-  static String get darkMode => tr('darkMode');
+  static String get changeTheme => tr('changeTheme');
 
-  static String get on => tr('on');
+  static String get light => tr('light');
 
-  static String get off => tr('off');
+  static String get dark => tr('dark');
+  static String get system => tr('system');
 
   static String get language => tr('language');
   static String get sureLogout => tr('sureLogout');
