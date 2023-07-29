@@ -1,41 +1,47 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/resources/manager_colors.dart';
-import '../../../../../core/resources/manager_fonts.dart';
+import 'package:get/get.dart';
 import '../../../../../core/resources/manager_sizes.dart';
-import '../../../../../core/resources/manager_styles.dart';
 
+// ignore: must_be_immutable
 class CustomTheme extends StatelessWidget {
   final String title;
-  final String value;
-  const CustomTheme({
+  final int value;
+  var onChanged;
+  final int groupValue;
+  CustomTheme({
     Key? key,
     required this.title,
     required this.value,
+    required this.onChanged,
+    required this.groupValue,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-        right: ManagerWidth.w24,
-        left: ManagerWidth.w24,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            title,
-            style: getRegularTextStyle(
-              fontSize: ManagerFontSize.s16,
-              color: ManagerColors.textColor,
+    return InkWell(
+      onTap: () {
+        onChanged(value);
+      },
+      child: Padding(
+        padding: EdgeInsets.only(
+          right: ManagerWidth.w24,
+          left: ManagerWidth.w24,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: context.textTheme.bodyLarge,
             ),
-          ),
-          Radio.adaptive(
-            value: true,
-            groupValue: '',
-            onChanged: (value) {},
-          )
-        ],
+            Radio.adaptive(
+              value: value,
+              groupValue: groupValue,
+              activeColor: context.theme.primaryColor,
+              onChanged: onChanged ?? (val) {},
+            )
+          ],
+        ),
       ),
     );
   }
