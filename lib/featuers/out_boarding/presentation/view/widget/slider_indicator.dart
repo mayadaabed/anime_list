@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../../config/constants.dart';
-import '../../../../../core/resources/manager_colors.dart';
 import '../../../../../core/resources/manager_sizes.dart';
 import '../../controller/out_boarding_controller.dart';
 
@@ -14,9 +12,9 @@ class SliderIndicator extends StatelessWidget {
     return GetBuilder<OutBoardingController>(builder: (controller) {
       return Container(
         margin: EdgeInsets.symmetric(horizontal: ManagerWidth.w140),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: ManagerColors.greyLight,
+          color: context.theme.splashColor,
         ),
         width: double.infinity,
         height: ManagerHeight.h8,
@@ -33,8 +31,8 @@ class SliderIndicator extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: controller.currentPage == index
-                        ? ManagerColors.primaryColor
-                        : ManagerColors.greyLight,
+                        ? context.theme.primaryColor
+                        : context.theme.splashColor,
                   ),
                 ),
               ),

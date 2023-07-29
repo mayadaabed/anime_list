@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../../core/resources/manager_colors.dart';
-import '../../../../core/resources/manager_fonts.dart';
 import '../../../../core/resources/manager_sizes.dart';
 import '../../../../core/resources/manager_strings.dart';
-import '../../../../core/resources/manager_styles.dart';
 import '../../../../core/widgets/main_button.dart';
 import '../../../../core/widgets/will_pop_scope.dart';
 import '../controller/out_boarding_controller.dart';
@@ -19,7 +15,7 @@ class OutBoardingView extends StatelessWidget {
     return willPopScope(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: ManagerColors.backgroundColor,
+        backgroundColor: context.theme.scaffoldBackgroundColor,
         body: SafeArea(
           child: Container(
             margin: EdgeInsets.symmetric(
@@ -42,9 +38,7 @@ class OutBoardingView extends StatelessWidget {
                           },
                           child: Text(
                             ManagerStrings.skip,
-                            style: getRegularTextStyle(
-                                fontSize: ManagerFontSize.s14,
-                                color: ManagerColors.textColor),
+                            style: context.textTheme.titleSmall,
                           ),
                         )),
                   ),
@@ -65,15 +59,12 @@ class OutBoardingView extends StatelessWidget {
                       onPressed: () {
                         controller.getStart();
                       },
-                      color: ManagerColors.primaryColor,
+                      color: context.theme.primaryColor,
                       minWidth: double.infinity,
                       height: ManagerHeight.h54,
                       child: Text(
                         ManagerStrings.getStartButton,
-                        style: getBoldTextStyle(
-                          fontSize: ManagerFontSize.s18,
-                          color: ManagerColors.black,
-                        ),
+                        style: context.textTheme.labelMedium,
                       )),
                   SizedBox(
                     height: ManagerHeight.h20,

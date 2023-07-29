@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../../../core/resources/manager_colors.dart';
 import '../../../../../core/resources/manager_fonts.dart';
 import '../../../../../core/resources/manager_sizes.dart';
@@ -32,10 +33,7 @@ class OutBoardingItem extends StatelessWidget {
         ),
         Text(
           title,
-          style: getBoldTextStyle(
-            fontSize: ManagerFontSize.s28,
-            color: ManagerColors.textColor,
-          ),
+          style: context.textTheme.bodyLarge,
           textAlign: TextAlign.center,
         ),
         SizedBox(
