@@ -19,7 +19,7 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ManagerColors.backgroundColor,
+      backgroundColor: context.theme.scaffoldBackgroundColor,
       appBar: MainAppBar(
         title: ManagerStrings.profile,
         hasLeading: false,
@@ -40,17 +40,11 @@ class ProfileView extends StatelessWidget {
                 children: [
                   Text(
                     ManagerStrings.otukao,
-                    style: getBoldTextStyle(
-                      fontSize: ManagerFontSize.s20,
-                      color: ManagerColors.textColor,
-                    ),
+                    style: context.textTheme.titleLarge,
                   ),
                   Text(
                     ManagerStrings.otukao,
-                    style: getRegularTextStyle(
-                      fontSize: ManagerFontSize.s15,
-                      color: ManagerColors.textColor,
-                    ),
+                    style: context.textTheme.titleMedium,
                   ),
                 ],
               )
@@ -61,13 +55,13 @@ class ProfileView extends StatelessWidget {
           ),
           Container(
             decoration: BoxDecoration(
-              color: ManagerColors.containerColor.withOpacity(.5),
+              color: context.theme.cardColor,
               borderRadius: BorderRadius.circular(ManagerRadius.r10),
-              boxShadow: const [
+              boxShadow: [
                 BoxShadow(
-                  color: ManagerColors.black,
-                  offset: Offset(0.0, 2.0),
-                  blurRadius: 5.0,
+                  color: context.theme.shadowColor,
+                  offset: const Offset(0.0, 2.0),
+                  blurRadius: 6.0,
                 ),
               ],
             ),
@@ -85,27 +79,37 @@ class ProfileView extends StatelessWidget {
                 textName: ManagerStrings.changeLanguage,
                 onTap: () => Get.toNamed(Routes.localeView),
               ),
-              const Divider(),
+              Divider(
+                color: context.theme.dividerColor,
+              ),
               CustomProfile(
                 imagePath: ManagerAssets.darkMode,
                 textName: ManagerStrings.appTheme,
-                // onTap: () => Get.toNamed(Routes.themeView),
+                onTap: () => Get.toNamed(Routes.themeView),
               ),
             ]),
           ),
           InkWell(
             onTap: () {
-              controller.logout();
+              controller.logout(context);
             },
             child: Container(
               height: ManagerHeight.h60,
               margin: EdgeInsets.symmetric(
                   horizontal: ManagerWidth.w16, vertical: ManagerHeight.h16),
               decoration: BoxDecoration(
-                  color: ManagerColors.containerColor.withOpacity(.5),
-                  borderRadius: BorderRadius.circular(
-                    ManagerRadius.r50,
-                  )),
+                color: context.theme.cardColor,
+                borderRadius: BorderRadius.circular(
+                  ManagerRadius.r50,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: context.theme.shadowColor,
+                    offset: const Offset(0.0, 2.0),
+                    blurRadius: 6.0,
+                  ),
+                ],
+              ),
               child: Row(children: [
                 Container(
                   width: ManagerWidth.w40,

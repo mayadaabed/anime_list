@@ -2,7 +2,6 @@ import 'package:anime_list/core/resources/manager_strings.dart';
 import 'package:anime_list/featuers/search/presentation/view/widgets/search_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../core/resources/manager_colors.dart';
 import '../../../../core/resources/manager_sizes.dart';
 import '../../../../core/widgets/base_text_form_feild.dart';
 import '../../../../core/widgets/main_app_bar.dart';
@@ -23,7 +22,7 @@ class SearchView extends StatelessWidget {
             appBar: MainAppBar(
               title: ManagerStrings.search,
             ),
-            backgroundColor: ManagerColors.backgroundColor,
+            backgroundColor: context.theme.scaffoldBackgroundColor,
             body: ListView(children: [
               SizedBox(
                 height: ManagerHeight.h20,
@@ -34,6 +33,7 @@ class SearchView extends StatelessWidget {
                   right: ManagerWidth.w10,
                 ),
                 child: baseTextFormField(
+                    context: context,
                     controller: controller.name,
                     hintText: ManagerStrings.search,
                     prefixIcon: Icons.search,

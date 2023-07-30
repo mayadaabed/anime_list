@@ -1,6 +1,4 @@
-import 'package:anime_list/core/resources/manager_fonts.dart';
 import 'package:anime_list/core/resources/manager_sizes.dart';
-import 'package:anime_list/core/resources/manager_styles.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -44,26 +42,20 @@ class LocaleView extends StatelessWidget {
                     Icon(
                       Icons.language,
                       size: ManagerIconSize.s24,
-                      color: ManagerColors.white,
+                      color: context.theme.iconTheme.color,
                     ),
                     SizedBox(
                       width: ManagerWidth.w10,
                     ),
                     Text(
                       ManagerStrings.language,
-                      style: getMediumTextStyle(
-                        fontSize: ManagerFontSize.s16,
-                        color: ManagerColors.textColor,
-                      ),
+                      style: context.textTheme.titleMedium,
                     ),
                     const Spacer(),
                     Text(
                       controller.languageList[controller.currentLanguage]
                           .onNull(),
-                      style: getMediumTextStyle(
-                        fontSize: ManagerFontSize.s16,
-                        color: ManagerColors.primaryColor,
-                      ),
+                      style: context.textTheme.titleMedium,
                     ),
                     SizedBox(
                       width: ManagerWidth.w10,
@@ -71,7 +63,7 @@ class LocaleView extends StatelessWidget {
                     Icon(
                       Icons.keyboard_arrow_down_rounded,
                       size: ManagerIconSize.s24,
-                      color: ManagerColors.white,
+                      color: context.theme.iconTheme.color,
                     ),
                   ],
                 ),
@@ -80,11 +72,7 @@ class LocaleView extends StatelessWidget {
                       value: value,
                       child: Text(
                         value,
-                        style: getTextStyle(
-                          fontSize: ManagerFontSize.s18,
-                          color: ManagerColors.textColor,
-                          weight: FontWeight.bold,
-                        ),
+                        style: context.textTheme.titleMedium,
                       ));
                 }).toList(),
                 isExpanded: true,

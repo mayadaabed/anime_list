@@ -1,10 +1,9 @@
+import 'package:anime_list/core/resources/manager_text_theme_dark.dart';
 import 'package:flutter/material.dart';
-
 import '../../config/constants.dart';
 import '../resources/manager_colors.dart';
 import '../resources/manager_fonts.dart';
 import '../resources/manager_styles.dart';
-import '../resources/manager_text_theme_light.dart';
 
 ThemeData managerDarkThemeData() {
   return ThemeData.dark().copyWith(
@@ -12,7 +11,7 @@ ThemeData managerDarkThemeData() {
 
     // MAIN COLORs APP
     primaryColor: ManagerColors.primaryColor,
-    primaryColorLight: ManagerColors.primaryColorDark,
+    primaryColorDark: ManagerColors.primaryColorDark,
 
     // disabled button colors
     disabledColor: ManagerColors.disabledColor,
@@ -35,6 +34,19 @@ ThemeData managerDarkThemeData() {
         shape: RoundedRectangleBorder(),
         disabledColor: ManagerColors.greyLight,
         buttonColor: ManagerColors.primaryColor),
-    textTheme: ManagerTextThemeLight(),
+
+    textTheme: ManagerTextThemeDark(),
+
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: ManagerColors.black,
+    ),
+
+    iconTheme: const IconThemeData(
+      color: ManagerColors.white,
+    ),
+
+    cardColor: ManagerColors.containerColorDark.withOpacity(.5),
+    shadowColor: ManagerColors.black,
+    dividerColor: ManagerColors.greyLight,
   );
 }

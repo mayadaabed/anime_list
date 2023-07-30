@@ -42,8 +42,9 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             onGenerateRoute: RouteGenerator.getRoute,
             initialRoute: Routes.splashView,
-            theme: _themeService.getThemeData(),
             themeMode: _themeService.getThemeMode(),
+            theme: _themeService.getThemeData(),
+            darkTheme: _themeService.getThemeData(),
             home: Container(),
           );
         });

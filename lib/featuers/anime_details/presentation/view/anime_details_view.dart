@@ -6,7 +6,6 @@ import 'package:anime_list/featuers/anime_details/presentation/view/widget/custo
 import 'package:anime_list/featuers/anime_details/presentation/view/widget/custom_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../core/resources/manager_colors.dart';
 import '../../../../core/resources/manager_sizes.dart';
 import '../../../../core/resources/manager_strings.dart';
 
@@ -22,15 +21,15 @@ class AnimeDetailsView extends StatelessWidget {
       },
       child: GetBuilder<AnimeDetailsController>(builder: (controller) {
         return Scaffold(
-            backgroundColor: ManagerColors.backgroundColor,
+            backgroundColor: context.theme.scaffoldBackgroundColor,
             appBar: const MainAppBar(
               title: '',
               hasLeading: true,
             ),
             extendBodyBehindAppBar: true,
             body: RefreshIndicator(
-              color: ManagerColors.primaryColor,
-              backgroundColor: ManagerColors.backgroundColor,
+              color: context.theme.primaryColor,
+              backgroundColor: context.theme.scaffoldBackgroundColor,
               onRefresh: () async {
                 await controller.animeDetails();
               },

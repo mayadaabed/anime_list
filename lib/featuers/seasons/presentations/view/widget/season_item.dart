@@ -1,11 +1,9 @@
 import 'package:anime_list/core/resources/manager_sizes.dart';
-import 'package:anime_list/core/resources/manager_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
+import 'package:get/get.dart';
 import '../../../../../core/resources/manager_assets.dart';
 import '../../../../../core/resources/manager_colors.dart';
-import '../../../../../core/resources/manager_fonts.dart';
 import '../../../../../core/resources/manager_strings.dart';
 
 class SeasonItem extends StatelessWidget {
@@ -67,10 +65,7 @@ class SeasonItem extends StatelessWidget {
                 child: Text(
                   title,
                   overflow: TextOverflow.ellipsis,
-                  style: getBoldTextStyle(
-                    fontSize: ManagerSize.s16,
-                    color: ManagerColors.textColor,
-                  ),
+                  style: context.textTheme.titleMedium,
                 ),
               ),
               SizedBox(
@@ -80,20 +75,14 @@ class SeasonItem extends StatelessWidget {
                 children: [
                   Text(
                     episode,
-                    style: getMediumTextStyle(
-                      fontSize: ManagerFontSize.s12,
-                      color: ManagerColors.textColor,
-                    ),
+                    style: context.textTheme.titleSmall,
                   ),
                   SizedBox(
                     width: ManagerWidth.w4,
                   ),
                   Text(
                     ManagerStrings.episode,
-                    style: getMediumTextStyle(
-                      fontSize: ManagerFontSize.s12,
-                      color: ManagerColors.textColor,
-                    ),
+                    style: context.textTheme.titleSmall,
                   ),
                 ],
               ),

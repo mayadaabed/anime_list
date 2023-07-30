@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../../../../core/resources/manager_colors.dart';
-import '../../../../../core/resources/manager_fonts.dart';
+import 'package:get/get.dart';
 import '../../../../../core/resources/manager_sizes.dart';
-import '../../../../../core/resources/manager_styles.dart';
 
 class CustomProfile extends StatelessWidget {
   final String imagePath;
@@ -30,23 +27,22 @@ class CustomProfile extends StatelessWidget {
                 horizontal: ManagerWidth.w4, vertical: ManagerHeight.h4),
             child: SvgPicture.asset(
               imagePath,
-              colorFilter: const ColorFilter.mode(
-                ManagerColors.white,
+              colorFilter: ColorFilter.mode(
+                context.theme.iconTheme.color!,
                 BlendMode.srcIn,
               ),
             ),
           ),
           Text(
             textName,
-            style: getRegularTextStyle(
-                fontSize: ManagerFontSize.s16, color: ManagerColors.textColor),
+            style: context.textTheme.displaySmall,
           ),
           const Spacer(),
           Padding(
             padding: EdgeInsets.only(right: ManagerWidth.w10),
-            child: const Icon(
+            child: Icon(
               Icons.arrow_forward_ios_rounded,
-              color: ManagerColors.white,
+              color: context.theme.iconTheme.color!,
             ),
           )
         ],

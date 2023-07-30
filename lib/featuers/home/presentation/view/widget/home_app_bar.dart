@@ -5,13 +5,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import '../../../../../core/resources/manager_assets.dart';
 import '../../../../../core/resources/manager_colors.dart';
-import '../../../../../core/resources/manager_fonts.dart';
 import '../../../../../core/resources/manager_strings.dart';
-import '../../../../../core/resources/manager_styles.dart';
 
-AppBar homeAppBar() {
+AppBar homeAppBar(BuildContext context) {
   return AppBar(
-    backgroundColor: ManagerColors.backgroundColor,
+    backgroundColor: context.theme.scaffoldBackgroundColor,
     title: Row(
       children: [
         CircleAvatar(
@@ -29,17 +27,11 @@ AppBar homeAppBar() {
           children: [
             Text(
               ManagerStrings.hello,
-              style: getBoldTextStyle(
-                fontSize: ManagerFontSize.s22,
-                color: ManagerColors.textColor,
-              ),
+              style: context.textTheme.bodyLarge,
             ),
             Text(
               ManagerStrings.otukao,
-              style: getRegularTextStyle(
-                fontSize: ManagerFontSize.s22,
-                color: ManagerColors.textColor,
-              ),
+              style: context.textTheme.titleLarge,
             ),
           ],
         ),
@@ -62,8 +54,8 @@ AppBar homeAppBar() {
           },
           icon: SvgPicture.asset(
             ManagerAssets.search,
-            colorFilter: const ColorFilter.mode(
-              ManagerColors.white,
+            colorFilter: ColorFilter.mode(
+              context.theme.disabledColor,
               BlendMode.srcIn,
             ),
           ),
@@ -82,8 +74,8 @@ AppBar homeAppBar() {
           onPressed: () {},
           icon: SvgPicture.asset(
             ManagerAssets.notification,
-            colorFilter: const ColorFilter.mode(
-              ManagerColors.white,
+            colorFilter: ColorFilter.mode(
+              context.theme.disabledColor,
               BlendMode.srcIn,
             ),
           ),

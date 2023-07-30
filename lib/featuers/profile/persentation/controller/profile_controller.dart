@@ -1,23 +1,33 @@
 import 'package:anime_list/core/resources/manager_colors.dart';
-import 'package:anime_list/core/resources/manager_fonts.dart';
 import 'package:anime_list/core/resources/manager_sizes.dart';
 import 'package:anime_list/core/resources/manager_strings.dart';
-import 'package:anime_list/core/resources/manager_styles.dart';
 import 'package:anime_list/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../config/dependency_injection.dart';
+import '../../../../core/service/theme_service.dart';
 import '../../../../core/storage/local/app_settings_shared_preferences.dart';
 
 class ProfileController extends GetxController {
   final AppSettingsSharedPreferences _appSettingsSharedPreferences =
       instance<AppSettingsSharedPreferences>();
-  void logout() {
+  int selectedOption = 1;
+  int valueDark = 1;
+  int valueLight = 0;
+
+  @override
+  void onInit() {
+    super.onInit();
+    selectedOption =
+        _appSettingsSharedPreferences.getAppTheme() == 'dark' ? 1 : 0;
+  }
+
+  void logout(BuildContext context) {
     Get.defaultDialog(
         title: ManagerStrings.logout,
         middleText: ManagerStrings.sureLogout,
-        backgroundColor: ManagerColors.backgroundColor,
+        backgroundColor: context.theme.scaffoldBackgroundColor,
         titlePadding: EdgeInsets.only(
           top: ManagerHeight.h20,
           bottom: ManagerHeight.h10,
@@ -27,17 +37,11 @@ class ProfileController extends GetxController {
           left: ManagerWidth.w10,
           right: ManagerWidth.w10,
         ),
-        titleStyle: getBoldTextStyle(
-          fontSize: ManagerFontSize.s18,
-          color: ManagerColors.textColor,
-        ),
-        middleTextStyle: getRegularTextStyle(
-          fontSize: ManagerFontSize.s16,
-          color: ManagerColors.textColor,
-        ),
+        titleStyle: context.textTheme.titleLarge,
+        middleTextStyle: context.textTheme.headlineLarge,
         textConfirm: ManagerStrings.logout,
         textCancel: ManagerStrings.cancel,
-        cancelTextColor: ManagerColors.white,
+        cancelTextColor: context.theme.iconTheme.color,
         confirmTextColor: ManagerColors.white,
         buttonColor: ManagerColors.red,
         radius: ManagerRadius.r50,
@@ -45,5 +49,11 @@ class ProfileController extends GetxController {
           Get.offAllNamed(Routes.outBoardingView);
           _appSettingsSharedPreferences.clear();
         });
+  }
+
+  onchanged(value) {
+    selectedOption = value;
+    ThemeService().switchTheme(value);
+    update();
   }
 }

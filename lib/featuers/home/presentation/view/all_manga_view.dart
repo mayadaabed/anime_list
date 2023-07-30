@@ -3,8 +3,6 @@ import 'package:anime_list/core/widgets/will_pop_scope.dart';
 import 'package:anime_list/featuers/home/presentation/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../../core/resources/manager_colors.dart';
 import '../../../../core/resources/manager_sizes.dart';
 import '../../../../core/resources/manager_strings.dart';
 import 'widget/custom_manga.dart';
@@ -20,7 +18,7 @@ class AllMangaView extends StatelessWidget {
         appBar: MainAppBar(
           title: ManagerStrings.allManga,
         ),
-        backgroundColor: ManagerColors.backgroundColor,
+        backgroundColor: context.theme.scaffoldBackgroundColor,
         body: GetBuilder<HomeController>(builder: (controller) {
           return ListView.builder(
             padding: EdgeInsets.only(

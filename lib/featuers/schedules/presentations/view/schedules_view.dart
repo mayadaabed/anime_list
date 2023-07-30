@@ -1,9 +1,7 @@
-import 'package:anime_list/core/resources/manager_colors.dart';
 import 'package:anime_list/featuers/schedules/presentations/controller/schedules_controller.dart';
 import 'package:anime_list/featuers/schedules/presentations/view/widget/schedules_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../core/resources/manager_sizes.dart';
 import '../../../../core/resources/manager_strings.dart';
 import '../../../../core/widgets/main_app_bar.dart';
@@ -16,7 +14,7 @@ class SchedulesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return willPopScope(
       child: Scaffold(
-        backgroundColor: ManagerColors.backgroundColor,
+        backgroundColor: context.theme.scaffoldBackgroundColor,
         appBar: MainAppBar(
           title: ManagerStrings.schedules,
           hasLeading: false,

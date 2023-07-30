@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 import '../../../../../core/resources/manager_colors.dart';
-import '../../../../../core/resources/manager_fonts.dart';
 import '../../../../../core/resources/manager_sizes.dart';
 import '../../../../../core/resources/manager_strings.dart';
-import '../../../../../core/resources/manager_styles.dart';
 
 class CustomDescription extends StatelessWidget {
   final String title;
@@ -37,10 +36,7 @@ class CustomDescription extends StatelessWidget {
         children: [
           Text(
             title,
-            style: getBoldTextStyle(
-              fontSize: ManagerFontSize.s18,
-              color: ManagerColors.textColor,
-            ),
+            style: context.textTheme.titleLarge,
           ),
           SizedBox(
             height: ManagerHeight.h10,
@@ -50,40 +46,28 @@ class CustomDescription extends StatelessWidget {
             children: [
               Text(
                 startDate,
-                style: getRegularTextStyle(
-                  fontSize: ManagerFontSize.s14,
-                  color: ManagerColors.greyLight,
-                ),
+                style: context.textTheme.headlineSmall,
               ),
               SizedBox(
                 width: ManagerWidth.w6,
               ),
               Text(
                 '.',
-                style: getRegularTextStyle(
-                  fontSize: ManagerFontSize.s14,
-                  color: ManagerColors.greyLight,
-                ),
+                style: context.textTheme.headlineSmall,
               ),
               SizedBox(
                 width: ManagerWidth.w6,
               ),
               Text(
                 episode,
-                style: getRegularTextStyle(
-                  fontSize: ManagerFontSize.s14,
-                  color: ManagerColors.greyLight,
-                ),
+                style: context.textTheme.headlineSmall,
               ),
               SizedBox(
                 width: ManagerWidth.w4,
               ),
               Text(
                 type,
-                style: getRegularTextStyle(
-                  fontSize: ManagerFontSize.s14,
-                  color: ManagerColors.greyLight,
-                ),
+                style: context.textTheme.headlineSmall,
               ),
             ],
           ),
@@ -102,10 +86,7 @@ class CustomDescription extends StatelessWidget {
               ),
               Text(
                 averageRating.toString(),
-                style: getRegularTextStyle(
-                  fontSize: ManagerFontSize.s14,
-                  color: ManagerColors.greyLight,
-                ),
+                style: context.textTheme.headlineSmall,
               ),
             ],
           ),
@@ -114,19 +95,13 @@ class CustomDescription extends StatelessWidget {
           ),
           Text(
             ManagerStrings.story,
-            style: getBoldTextStyle(
-              fontSize: ManagerFontSize.s16,
-              color: ManagerColors.textColor,
-            ),
+            style: context.textTheme.titleLarge,
           ),
           ReadMoreText(
             description,
             trimLines: 2,
-            colorClickableText: ManagerColors.primaryColor,
-            style: getRegularTextStyle(
-              fontSize: ManagerFontSize.s14,
-              color: ManagerColors.greyLight,
-            ),
+            colorClickableText: context.theme.primaryColor,
+            style: context.textTheme.headlineSmall,
           ),
         ],
       ),

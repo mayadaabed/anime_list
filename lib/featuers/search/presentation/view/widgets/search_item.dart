@@ -1,12 +1,10 @@
 import 'package:anime_list/core/resources/manager_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:get/get.dart';
 import '../../../../../core/resources/manager_assets.dart';
 import '../../../../../core/resources/manager_colors.dart';
-import '../../../../../core/resources/manager_fonts.dart';
 import '../../../../../core/resources/manager_strings.dart';
-import '../../../../../core/resources/manager_styles.dart';
 
 class SearchItem extends StatelessWidget {
   final String name;
@@ -24,10 +22,9 @@ class SearchItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: ManagerHeight.h206,
       width: ManagerWidth.w205,
-      decoration: BoxDecoration(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -54,20 +51,14 @@ class SearchItem extends StatelessWidget {
           Text(
             name,
             overflow: TextOverflow.ellipsis,
-            style: getBoldTextStyle(
-              fontSize: ManagerFontSize.s15,
-              color: ManagerColors.textColor,
-            ),
+            style: context.textTheme.displaySmall,
           ),
           Row(
             children: [
               Text(
                 episode,
                 overflow: TextOverflow.ellipsis,
-                style: getMediumTextStyle(
-                  fontSize: ManagerFontSize.s12,
-                  color: ManagerColors.textColor,
-                ),
+                style: context.textTheme.titleSmall,
               ),
               SizedBox(
                 width: ManagerWidth.w4,
@@ -75,10 +66,7 @@ class SearchItem extends StatelessWidget {
               Text(
                 ManagerStrings.episode,
                 overflow: TextOverflow.ellipsis,
-                style: getMediumTextStyle(
-                  fontSize: ManagerFontSize.s12,
-                  color: ManagerColors.textColor,
-                ),
+                style: context.textTheme.titleSmall,
               ),
             ],
           ),

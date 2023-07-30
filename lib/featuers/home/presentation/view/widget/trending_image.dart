@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../core/resources/manager_sizes.dart';
 
 class TrendingImage extends StatelessWidget {

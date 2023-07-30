@@ -3,7 +3,6 @@ import 'package:anime_list/featuers/seasons/presentations/controller/seasons_con
 import 'package:anime_list/featuers/seasons/presentations/view/widget/season_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../core/resources/manager_colors.dart';
 import '../../../../core/widgets/main_app_bar.dart';
 import '../../../../core/widgets/will_pop_scope.dart';
 
@@ -14,7 +13,7 @@ class SeasonsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return willPopScope(
       child: Scaffold(
-        backgroundColor: ManagerColors.backgroundColor,
+        backgroundColor: context.theme.scaffoldBackgroundColor,
         appBar: MainAppBar(
           title: ManagerStrings.season,
           hasLeading: false,
