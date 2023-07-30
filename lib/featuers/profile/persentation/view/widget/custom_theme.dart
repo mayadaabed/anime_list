@@ -32,7 +32,7 @@ class CustomTheme extends StatelessWidget {
           children: [
             Text(
               title,
-              style: context.textTheme.bodyLarge,
+              style: context.textTheme.displaySmall,
             ),
             Radio.adaptive(
               value: value,

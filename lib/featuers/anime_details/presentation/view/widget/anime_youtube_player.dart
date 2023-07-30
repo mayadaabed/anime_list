@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-
-import '../../../../../core/resources/manager_colors.dart';
-import '../../../../../core/resources/manager_fonts.dart';
 import '../../../../../core/resources/manager_sizes.dart';
 import '../../../../../core/resources/manager_strings.dart';
-import '../../../../../core/resources/manager_styles.dart';
 import '../../controller/anime_details_controller.dart';
 
 class AnimeYoutbuePlayer extends StatelessWidget {
@@ -25,10 +21,7 @@ class AnimeYoutbuePlayer extends StatelessWidget {
           children: [
             Text(
               ManagerStrings.trailer,
-              style: getBoldTextStyle(
-                fontSize: ManagerFontSize.s20,
-                color: ManagerColors.textColor,
-              ),
+              style: context.textTheme.titleLarge,
             ),
             SizedBox(
               height: ManagerHeight.h10,
@@ -43,7 +36,7 @@ class AnimeYoutbuePlayer extends StatelessWidget {
                 child: YoutubePlayer(
                   controller: controller.youtubePlayerController,
                   showVideoProgressIndicator: true,
-                  progressIndicatorColor: ManagerColors.primaryColor,
+                  progressIndicatorColor: context.theme.primaryColor,
                 ),
               ),
             ),

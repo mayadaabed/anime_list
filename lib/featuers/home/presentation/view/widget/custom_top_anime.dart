@@ -2,11 +2,10 @@ import 'package:anime_list/core/extentions/extentions.dart';
 import 'package:anime_list/core/resources/manager_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import '../../../../../core/resources/manager_assets.dart';
 import '../../../../../core/resources/manager_colors.dart';
-import '../../../../../core/resources/manager_fonts.dart';
 import '../../../../../core/resources/manager_sizes.dart';
-import '../../../../../core/resources/manager_styles.dart';
 
 class CustomTopAnime extends StatelessWidget {
   final String name;
@@ -56,20 +55,14 @@ class CustomTopAnime extends StatelessWidget {
             Text(
               name,
               overflow: TextOverflow.ellipsis,
-              style: getBoldTextStyle(
-                fontSize: ManagerFontSize.s15,
-                color: ManagerColors.textColor,
-              ),
+              style: context.textTheme.titleMedium,
             ),
             Row(
               children: [
                 Text(
                   episode,
                   overflow: TextOverflow.ellipsis,
-                  style: getMediumTextStyle(
-                    fontSize: ManagerFontSize.s12,
-                    color: ManagerColors.textColor,
-                  ),
+                  style: context.textTheme.titleSmall,
                 ),
                 SizedBox(
                   width: ManagerWidth.w4,
@@ -77,10 +70,7 @@ class CustomTopAnime extends StatelessWidget {
                 Text(
                   ManagerStrings.episode,
                   overflow: TextOverflow.ellipsis,
-                  style: getMediumTextStyle(
-                    fontSize: ManagerFontSize.s12,
-                    color: ManagerColors.textColor,
-                  ),
+                  style: context.textTheme.titleSmall,
                 ),
               ],
             ),

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../../core/resources/manager_colors.dart';
-import '../../../../../core/resources/manager_fonts.dart';
 import '../../../../../core/resources/manager_sizes.dart';
-import '../../../../../core/resources/manager_styles.dart';
 
 // ignore: must_be_immutable
 class OutBoardingItem extends StatelessWidget {
@@ -41,10 +38,7 @@ class OutBoardingItem extends StatelessWidget {
         ),
         Text(
           subTitle,
-          style: getRegularTextStyle(
-            fontSize: ManagerFontSize.s14,
-            color: ManagerColors.textColorLight,
-          ),
+          style: context.textTheme.titleMedium,
           textAlign: TextAlign.center,
         ),
       ],

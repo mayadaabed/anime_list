@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../../../core/resources/manager_colors.dart';
-import '../../../../../core/resources/manager_fonts.dart';
 import '../../../../../core/resources/manager_sizes.dart';
 import '../../../../../core/resources/manager_strings.dart';
-import '../../../../../core/resources/manager_styles.dart';
 
 class CustomManga extends StatelessWidget {
   final void Function()? onTap;
@@ -34,7 +33,7 @@ class CustomManga extends StatelessWidget {
         width: double.infinity,
         height: ManagerHeight.h130,
         decoration: BoxDecoration(
-          color: ManagerColors.backgroundColor,
+          color: context.theme.scaffoldBackgroundColor,
           borderRadius: BorderRadius.circular(
             ManagerRadius.r10,
           ),
@@ -42,13 +41,16 @@ class CustomManga extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(ManagerRadius.r10),
-              child: Image.network(
-                imagePath,
-                width: ManagerWidth.w100,
-                height: ManagerHeight.h130,
-                fit: BoxFit.fill,
+            SizedBox(
+              width: ManagerWidth.w100,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(ManagerRadius.r10),
+                child: Image.network(
+                  imagePath,
+                  width: ManagerWidth.w100,
+                  height: ManagerHeight.h130,
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
             SizedBox(
@@ -62,30 +64,21 @@ class CustomManga extends StatelessWidget {
                   child: Text(
                     title,
                     overflow: TextOverflow.ellipsis,
-                    style: getBoldTextStyle(
-                      fontSize: ManagerFontSize.s20,
-                      color: ManagerColors.textColor,
-                    ),
+                    style: context.textTheme.titleLarge,
                   ),
                 ),
                 Row(
                   children: [
                     Text(
                       chapters,
-                      style: getMediumTextStyle(
-                        fontSize: ManagerFontSize.s16,
-                        color: ManagerColors.textColor,
-                      ),
+                      style: context.textTheme.titleMedium,
                     ),
                     SizedBox(
                       width: ManagerWidth.w6,
                     ),
                     Text(
                       ManagerStrings.chapters,
-                      style: getMediumTextStyle(
-                        fontSize: ManagerFontSize.s14,
-                        color: ManagerColors.textColor,
-                      ),
+                      style: context.textTheme.titleSmall,
                     ),
                   ],
                 ),
@@ -95,10 +88,7 @@ class CustomManga extends StatelessWidget {
                 const Spacer(),
                 Text(
                   date,
-                  style: getMediumTextStyle(
-                    fontSize: ManagerFontSize.s12,
-                    color: ManagerColors.textColor,
-                  ),
+                  style: context.textTheme.titleSmall,
                 ),
                 SizedBox(
                   height: ManagerHeight.h10,
@@ -115,10 +105,7 @@ class CustomManga extends StatelessWidget {
                     ),
                     Text(
                       rate,
-                      style: getMediumTextStyle(
-                        fontSize: ManagerFontSize.s14,
-                        color: ManagerColors.textColor,
-                      ),
+                      style: context.textTheme.titleMedium,
                     ),
                   ],
                 )

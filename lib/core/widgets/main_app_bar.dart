@@ -1,8 +1,6 @@
 import 'package:anime_list/core/resources/manager_colors.dart';
-import 'package:anime_list/core/resources/manager_fonts.dart';
-import 'package:anime_list/core/resources/manager_styles.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import '../../config/constants.dart';
 import '../resources/manager_sizes.dart';
 
@@ -27,7 +25,9 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: ManagerColors.black.withOpacity(0.7),
+            color: context.theme.cardColor.withOpacity(
+              ManagerOpacity.op0_6,
+            ),
           ),
           child: Center(
             child: IconButton(
@@ -42,16 +42,13 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       elevation: Constants.elevation,
       iconTheme: IconThemeData(
-        color: ManagerColors.white,
+        color: context.theme.iconTheme.color,
         size: ManagerIconSize.s36,
       ),
       backgroundColor: ManagerColors.transparent,
       title: Text(
         title,
-        style: getBoldTextStyle(
-          fontSize: ManagerFontSize.s20,
-          color: ManagerColors.textColor,
-        ),
+        style: context.textTheme.titleLarge,
       ),
       centerTitle: true,
     );

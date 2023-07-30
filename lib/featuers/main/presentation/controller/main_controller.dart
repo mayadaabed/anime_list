@@ -26,7 +26,9 @@ class MainController extends GetxController {
         customWidget: SvgPicture.asset(
           ManagerAssets.homeImage,
           colorFilter: ColorFilter.mode(
-            selectedTab == 0 ? ManagerColors.primaryColor : ManagerColors.white,
+            selectedTab == 0
+                ? ManagerColors.primaryColor
+                : ManagerColors.greyLight,
             BlendMode.srcIn,
           ),
         ),
@@ -35,7 +37,9 @@ class MainController extends GetxController {
         customWidget: SvgPicture.asset(
           ManagerAssets.season,
           colorFilter: ColorFilter.mode(
-            selectedTab == 1 ? ManagerColors.primaryColor : ManagerColors.white,
+            selectedTab == 1
+                ? ManagerColors.primaryColor
+                : ManagerColors.greyLight,
             BlendMode.srcIn,
           ),
         ),
@@ -44,7 +48,9 @@ class MainController extends GetxController {
         customWidget: SvgPicture.asset(
           ManagerAssets.schedule,
           colorFilter: ColorFilter.mode(
-            selectedTab == 2 ? ManagerColors.primaryColor : ManagerColors.white,
+            selectedTab == 2
+                ? ManagerColors.primaryColor
+                : ManagerColors.greyLight,
             BlendMode.srcIn,
           ),
         ),
@@ -53,7 +59,9 @@ class MainController extends GetxController {
         customWidget: SvgPicture.asset(
           ManagerAssets.profile,
           colorFilter: ColorFilter.mode(
-            selectedTab == 3 ? ManagerColors.primaryColor : ManagerColors.white,
+            selectedTab == 3
+                ? ManagerColors.primaryColor
+                : ManagerColors.greyLight,
             BlendMode.srcIn,
           ),
         ),

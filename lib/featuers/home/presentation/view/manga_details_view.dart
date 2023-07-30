@@ -1,7 +1,7 @@
 import 'package:anime_list/core/widgets/will_pop_scope.dart';
 import 'package:anime_list/featuers/anime_details/presentation/view/widget/custom_decription.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/resources/manager_colors.dart';
+import 'package:get/get.dart';
 import '../../../../core/resources/manager_sizes.dart';
 import '../../../../core/resources/manager_strings.dart';
 import '../../../../core/widgets/main_app_bar.dart';
@@ -28,7 +28,7 @@ class MangaDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return willPopScope(
         child: Scaffold(
-            backgroundColor: ManagerColors.backgroundColor,
+            backgroundColor: context.theme.scaffoldBackgroundColor,
             appBar: const MainAppBar(
               title: '',
             ),

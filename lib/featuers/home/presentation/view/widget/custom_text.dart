@@ -1,7 +1,7 @@
 import 'package:anime_list/core/extentions/extentions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../../../../core/resources/manager_colors.dart';
 import '../../../../../core/resources/manager_fonts.dart';
 import '../../../../../core/resources/manager_sizes.dart';
 import '../../../../../core/resources/manager_styles.dart';
@@ -30,10 +30,7 @@ class CustomText extends StatelessWidget {
         children: [
           Text(
             name,
-            style: getBoldTextStyle(
-              fontSize: ManagerFontSize.s20,
-              color: ManagerColors.textColor,
-            ),
+            style: context.textTheme.titleLarge,
           ),
           TextButton(
             onPressed: onPressed.onNull(),

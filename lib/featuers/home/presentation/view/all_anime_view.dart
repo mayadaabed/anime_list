@@ -3,7 +3,6 @@ import 'package:anime_list/featuers/home/presentation/controller/home_controller
 import 'package:anime_list/featuers/home/presentation/view/widget/custom_top_anime.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../core/resources/manager_colors.dart';
 import '../../../../core/resources/manager_sizes.dart';
 import '../../../../core/resources/manager_strings.dart';
 import '../../../../core/widgets/main_app_bar.dart';
@@ -18,7 +17,7 @@ class AllAnimeView extends StatelessWidget {
       appBar: MainAppBar(
         title: ManagerStrings.allAnime,
       ),
-      backgroundColor: ManagerColors.backgroundColor,
+      backgroundColor: context.theme.scaffoldBackgroundColor,
       body: GetBuilder<HomeController>(builder: (controller) {
         return GridView.builder(
           padding: EdgeInsets.only(

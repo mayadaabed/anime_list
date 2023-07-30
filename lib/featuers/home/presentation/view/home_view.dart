@@ -1,4 +1,3 @@
-import 'package:anime_list/core/resources/manager_colors.dart';
 import 'package:anime_list/core/resources/manager_sizes.dart';
 import 'package:anime_list/core/resources/manager_strings.dart';
 import 'package:anime_list/featuers/home/presentation/view/widget/custom_banner.dart';
@@ -19,8 +18,8 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return willPopScope(
       child: Scaffold(
-        backgroundColor: ManagerColors.backgroundColor,
-        appBar: homeAppBar(),
+        backgroundColor: context.theme.scaffoldBackgroundColor,
+        appBar: homeAppBar(context),
         body: GetBuilder<HomeController>(builder: (controller) {
           return ListView(
             children: [
@@ -30,7 +29,7 @@ class HomeView extends StatelessWidget {
               const CustomBanner(),
               CustomText(
                 name: ManagerStrings.topAnime,
-                buttonColor: ManagerColors.primaryColor,
+                buttonColor: context.theme.primaryColor,
                 nameButton: ManagerStrings.seeAll,
                 onPressed: () {
                   controller.goTo(Routes.allAnimeView);
@@ -62,7 +61,7 @@ class HomeView extends StatelessWidget {
               ),
               CustomText(
                 name: ManagerStrings.manga,
-                buttonColor: ManagerColors.primaryColor,
+                buttonColor: context.theme.primaryColor,
                 nameButton: ManagerStrings.seeAll,
                 onPressed: () {
                   controller.goTo(Routes.allMangaView);
