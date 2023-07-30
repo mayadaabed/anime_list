@@ -19,7 +19,19 @@ class ManagerTextThemeLight extends TextTheme {
   @override
   TextStyle get headlineMedium => getMediumTextStyle(
         fontSize: ManagerFontSize.s16,
-        color: ManagerColors.textColorLight,
+        color: ManagerColors.greyLight,
+      );
+
+  @override
+  TextStyle get headlineSmall => getRegularTextStyle(
+        fontSize: ManagerFontSize.s14,
+        color: ManagerColors.greyLight,
+      );
+
+  @override
+  TextStyle get headlineLarge => getBoldTextStyle(
+        fontSize: ManagerFontSize.s16,
+        color: ManagerColors.greyLight,
       );
 
   @override
@@ -29,8 +41,38 @@ class ManagerTextThemeLight extends TextTheme {
       );
 
   @override
-  TextStyle get bodyLarge => getRegularTextStyle(
-        fontSize: ManagerFontSize.s16,
+  TextStyle get titleSmall => getRegularTextStyle(
+        fontSize: ManagerFontSize.s12,
         color: ManagerColors.textColorLight,
+      );
+
+  @override
+  TextStyle get titleLarge => getBoldTextStyle(
+        fontSize: ManagerFontSize.s20,
+        color: ManagerColors.textColorLight,
+      );
+
+  @override
+  TextStyle get bodyLarge => getBoldTextStyle(
+        fontSize: ManagerFontSize.s26,
+        color: ManagerColors.textColorLight,
+      );
+
+  @override
+  TextStyle get bodyMedium => getBoldTextStyle(
+        fontSize: ManagerFontSize.s22,
+        color: ManagerColors.textColorLight,
+      );
+
+  @override
+  TextStyle get bodySmall => getRegularTextStyle(
+        fontSize: ManagerFontSize.s14,
+        color: ManagerColors.textColorLight,
+      );
+
+  @override
+  TextStyle get labelMedium => getBoldTextStyle(
+        fontSize: ManagerFontSize.s20,
+        color: ManagerColors.textColor,
       );
 }
