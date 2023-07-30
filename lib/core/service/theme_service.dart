@@ -36,11 +36,8 @@ class ThemeService {
 
   ThemeData getThemeData() {
     if (loadTheme() == ThemeMode.dark) {
-      print('dark');
       return managerDarkThemeData();
     } else {
-      print('light');
-
       return managerLightThemeData();
     }
   }
@@ -51,11 +48,9 @@ class ThemeService {
     if (value == 1) {
       _changeThemeMode(ThemeMode.dark);
       _saveTheme('dark');
-      print('dark');
     } else {
       _changeThemeMode(ThemeMode.light);
       _saveTheme('light');
-      print('light');
     }
     await Get.forceAppUpdate();
   }
