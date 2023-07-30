@@ -14,8 +14,11 @@ class ManagerColors {
   static const Color scaffoldBackgroundColorDark = Color(0xff0f0f0f);
   static const Color greyLight = Color(0xFFA7A2A2);
   static const Color starColor = Color(0xFFFFFF00);
-  static const Color containerColor = Color(0xFF515151);
+  static const Color containerColorDark = Color(0xFF515151);
+  static const Color containerColorLight = Color(0xFFffffff);
   static const Color red = Color(0xFFFF2400);
-  static const Color disabledColor = Colors.grey;
-  static const Color scaffoldBackgroundColorLight = Colors.white;
+  static const Color iconColorDark = Color(0xFFFF2400);
+  static const Color bottomNavLight = Color(0xFFF5FEFD);
+  static const Color disabledColor = Colors.white;
+  static const Color scaffoldBackgroundColorLight = Color(0xFFFAFAFA);
 }
