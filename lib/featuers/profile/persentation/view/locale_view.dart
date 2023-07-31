@@ -14,7 +14,7 @@ class LocaleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ManagerColors.backgroundColor,
+      backgroundColor: context.theme.scaffoldBackgroundColor,
       appBar: MainAppBar(
         title: ManagerStrings.changeLanguage,
         hasLeading: true,
