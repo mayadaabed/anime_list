@@ -48,5 +48,6 @@ ThemeData managerDarkThemeData() {
     cardColor: ManagerColors.containerColorDark.withOpacity(.5),
     shadowColor: ManagerColors.black,
     dividerColor: ManagerColors.greyLight,
+    canvasColor: ManagerColors.black,
   );
 }

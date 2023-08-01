@@ -3,7 +3,6 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:anime_list/core/extentions/extentions.dart';
-import '../../../../core/resources/manager_colors.dart';
 import '../../../../core/resources/manager_strings.dart';
 import '../../../../core/widgets/main_app_bar.dart';
 import '../controller/locale_notifier_controller.dart';
@@ -32,7 +31,7 @@ class LocaleView extends StatelessWidget {
                 dropdownStyleData: DropdownStyleData(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
-                    color: ManagerColors.black,
+                    color: context.theme.canvasColor,
                   ),
                 ),
                 customButton: Row(

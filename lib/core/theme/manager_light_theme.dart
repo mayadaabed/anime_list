@@ -46,5 +46,6 @@ ThemeData managerLightThemeData() {
     cardColor: ManagerColors.containerColorLight,
     shadowColor: ManagerColors.greyLight,
     dividerColor: ManagerColors.greyLight,
+    canvasColor: ManagerColors.white,
   );
 }
