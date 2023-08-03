@@ -1,3 +1,4 @@
+import 'package:anime_list/config/constants.dart';
 import 'package:anime_list/core/resources/manager_colors.dart';
 import 'package:anime_list/core/resources/manager_sizes.dart';
 import 'package:anime_list/core/resources/manager_strings.dart';
@@ -20,7 +21,9 @@ class ProfileController extends GetxController {
   void onInit() {
     super.onInit();
     selectedOption =
-        _appSettingsSharedPreferences.getAppTheme() == 'dark' ? 1 : 0;
+        _appSettingsSharedPreferences.theme == Constants.prefKeyThemeDark
+            ? 1
+            : 0;
   }
 
   void logout(BuildContext context) {

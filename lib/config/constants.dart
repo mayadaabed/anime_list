@@ -15,6 +15,8 @@ class Constants {
   static const String arabic = 'العربية';
   static const String english = 'English';
   static const String prefKeyTheme = 'theme_key';
+  static const String prefKeyThemeDark = 'dark';
+  static const String prefKeyThemeLight = 'light';
 }
 
 class ConstantsPrefsKeys {

@@ -37,7 +37,7 @@ class AppSettingsSharedPreferences {
     await _sharedPreferences.setString(Constants.prefKeyTheme, theme);
   }
 
-  String getAppTheme() {
-    return _sharedPreferences.getString(Constants.prefKeyTheme).toString();
+  String get theme {
+    return _sharedPreferences.getString(Constants.prefKeyTheme).dark();
   }
 }

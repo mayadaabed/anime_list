@@ -38,7 +38,7 @@ class OutBoardingView extends StatelessWidget {
                           },
                           child: Text(
                             ManagerStrings.skip,
-                            style: context.textTheme.titleSmall,
+                            style: context.textTheme.titleMedium,
                           ),
                         )),
                   ),

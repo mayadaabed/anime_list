@@ -57,7 +57,7 @@ dependencies:
   visibility_detector: ^0.4.0+2
   intl: 
   easy_localization: ^3.0.2
-  dropdown_button2: ^2.3.6
+  dropdown_button2: ^2.3.7
   
   
 
@@ -73,6 +73,12 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   build_runner: ^2.4.3
   json_serializable: ^6.6.2
+  flutter_launcher_icons: ^0.13.1
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

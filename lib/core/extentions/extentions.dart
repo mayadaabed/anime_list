@@ -83,3 +83,14 @@ extension NonNullLocale on String? {
     }
   }
 }
+
+
+extension NonNullTheme on String? {
+  String dark() {
+    if (this == null) {
+      return Constants.prefKeyThemeDark;
+    } else {
+      return this!;
+    }
+  }
+}

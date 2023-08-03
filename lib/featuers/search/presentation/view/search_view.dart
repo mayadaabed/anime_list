@@ -37,7 +37,7 @@ class SearchView extends StatelessWidget {
                     controller: controller.name,
                     hintText: ManagerStrings.search,
                     prefixIcon: Icons.search,
-                    onChange: (value) {
+                    onSubmit: (value) {
                       controller.searchAnime();
                     }),
               ),

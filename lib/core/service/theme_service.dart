@@ -1,3 +1,4 @@
+import 'package:anime_list/config/constants.dart';
 import 'package:anime_list/core/theme/manager_dark_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,8 +11,8 @@ class ThemeService {
       instance<AppSettingsSharedPreferences>();
 
   ThemeMode loadTheme() {
-    String theme = _appSettingsSharedPreferences.getAppTheme();
-    if (theme == 'dark') {
+    String theme = _appSettingsSharedPreferences.theme;
+    if (theme == Constants.prefKeyThemeDark) {
       return ThemeMode.dark;
     } else {
       return ThemeMode.light;
@@ -20,9 +21,9 @@ class ThemeService {
 
   _saveTheme(String isDarkMode) {
     if (isDarkMode == 'dark') {
-      _appSettingsSharedPreferences.setAppTheme('dark');
+      _appSettingsSharedPreferences.setAppTheme(Constants.prefKeyThemeDark);
     } else {
-      _appSettingsSharedPreferences.setAppTheme('light');
+      _appSettingsSharedPreferences.setAppTheme(Constants.prefKeyThemeLight);
     }
   }
 
@@ -47,10 +48,10 @@ class ThemeService {
   Future<void> switchTheme(value) async {
     if (value == 1) {
       _changeThemeMode(ThemeMode.dark);
-      _saveTheme('dark');
+      _saveTheme(Constants.prefKeyThemeDark);
     } else {
       _changeThemeMode(ThemeMode.light);
-      _saveTheme('light');
+      _saveTheme(Constants.prefKeyThemeLight);
     }
     await Get.forceAppUpdate();
   }

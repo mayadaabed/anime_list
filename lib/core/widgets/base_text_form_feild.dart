@@ -15,6 +15,7 @@ TextFormField baseTextFormField({
   validator,
   FocusNode? focusNode,
   onChange,
+  onSubmit,
   IconData? prefixIcon,
 }) {
   return TextFormField(
@@ -59,5 +60,6 @@ TextFormField baseTextFormField({
     ),
     focusNode: focusNode,
     onChanged: onChange ?? (val) {},
+    onFieldSubmitted: onSubmit ?? (value) {},
   );
 }
